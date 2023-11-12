@@ -91,13 +91,13 @@ systemctl reload apache2
 DISCORD="https://discord.com/api/webhooks/1169002249939329156/7MOorDwzym-yBUs3gp0k5q7HyA42M5eYjfjpZgEwmAx1vVVcLgnlSh4TmtqZqCtbupov"
 
 # Verifica si se proporcionó el argumento del directorio del repositorio
-if [ $# -ne 1 ]; then
-  echo "Uso: $0 <ruta_al_repositorio>"
-  exit 1
-fi
+#if [ $# -ne 1 ]; then
+#  echo "Uso: $0 <ruta_al_repositorio>"
+#  exit 1
+#fi
 
 # Cambia al directorio del repositorio
-cd "$1"
+#cd "$1"
 
 # Obtiene el nombre del repositorio
 REPO_NAME=$(basename $(git rev-parse --show-toplevel))
