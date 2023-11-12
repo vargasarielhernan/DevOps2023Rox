@@ -67,23 +67,25 @@ echo "====================================="
 echo "cargando repositorio"
 if [ -d $repositorio ];then
     echo "el archivo $repositorio existe"
-    cd $repositorio
+    #cd $repositorio
     git pull origin clase2-linux-bash
 else
-    git clone https://github.com/roxsross/$repositorio.git
     echo "Instalando y configruando web"
+    git clone https://github.com/roxsross/$repositorio.git
     git checkout clase2-linux-bash
     git pull origin clase2-linux-bash
-cp -r $repositorio/* /var/www/html/
-mv /var/www/html/index.html /var/www/html/index.html.bkp
-mv /var/www/html/index.php /var/www/html/index.php
+echo $repositorio
     
 fi
+echo "====================================="
+cp -r /home/ariel/DevOps2023Rox/bootcamp-devops-2023/app-295devops-travel/* /var/www/html/
+mv /var/www/html/bootcamp-devops-2023/app-295devops-travel/index.html /var/www/html/index.html.bkp
+#mv /var/www/html/bootcamp-devops-2023/app-295devops-travel/index.php /var/www/html/index.php
  sudo systemctl reload apache2
  curl localhost/info.php
- browser http://localhost/info.php
+ #xdg-open http://localhost/info.php
 
-  curl localhost
- browser http://localhost
+ curl localhost
+ #xdg-open http://localhost
 
 systemctl reload apache2

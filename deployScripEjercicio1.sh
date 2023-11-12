@@ -32,6 +32,16 @@ else
         apt install -y git
 fi
 echo "====================================="
+echo "Verificando curl"
+
+if dpkg -l |grep -q curl;
+then
+    echo "Curl instalado en sistema"
+else
+    echo "instalando curl"
+        apt install -y curl
+fi
+echo "====================================="
 echo "verificando mariadb"
 if dpkg -l |grep -q mariadb-server;
 then
@@ -54,7 +64,7 @@ INSERT INTO products (Name,Price,ImageUrl) VALUES ("Laptop","100","c-1.png"),("D
 
 EOF
 
-mysql < db-load-script.sql
+lmysql < db-load-script.sq
 fi
 echo "====================================="
 echo "cargando repositorio"
